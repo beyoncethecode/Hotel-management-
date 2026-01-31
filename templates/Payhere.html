@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+
+        /* Background Container */
+        .background-container {
+            background-image: url("https://hotelchantelle.com/wp-content/uploads/2023/09/2747.webp");
+            background-size: cover;
+            background-position: center;
+            height: 100vh; /* Full-screen height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        
+        /* Heading and Section Titles */
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h3 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+/* Payment Form Container */
+        .payment-container {
+            background-color: #fff;
+            padding: 50px;
+            border-radius: 30px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            width: 500px;
+        }
+
+
+        .payment-section {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        /* Input Fields and Select Dropdown */
+        input[type="text"], input[type="month"], select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        input[type="text"]::placeholder {
+            color: #ccc;
+        }
+
+        /* Submit Button */
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .submit-section {
+            margin-top: 20px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="background-container">
+        <div class="payment-container">
+            <h2>Payment Details</h2>
+            <form action="" method="post">
+                <!-- Card Payment Section -->
+                <div class="payment-section">
+                    <h3>Card Payment</h3>
+                    <label for="card-number">Card Number:</label>
+                    <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9101 1121" required>
+
+                    <label for="expiry-date">Expiry Date:</label>
+                    <input type="month" id="expiry-date" name="expiry-date" required>
+
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" name="cvv" maxlength="3" pattern="\d{3}" placeholder="123" required>
+                </div>
+
+                <!-- Netbanking Section -->
+                <div class="payment-section">
+                    <h3>Netbanking</h3>
+                    <label for="bank">Choose Your Bank:</label>
+                    <select id="bank" name="bank" required>
+                        <option value="" disabled selected>Select your bank</option>
+                        <option value="hdfc">HDFC Bank</option>
+                        <option value="sbi">State Bank of India (SBI)</option>
+                        <option value="icici">ICICI Bank</option>
+                        <option value="axis">Axis Bank</option>
+                        <option value="kotak">Kotak Mahindra Bank</option>
+                    </select>
+                </div>
+
+                <!-- Submit Payment Button -->
+                <div class="submit-section">
+                    <button type="submit">Submit Payment</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

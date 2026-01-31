@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paradise Hotel Reservation</title>
+
+<style>
+    body {
+        height: 100%;
+        font-family: Arial, sans-serif;
+        margin: 0;
+    }
+
+    .bg-img {
+        background-image: url("https://www.theparkhotels.com/images/site-specific/new-delhi/rooms/residence-rooms/hero-the-residence-room.jpg");
+        min-height: 100vh;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container {
+        position: relative;
+        max-width: 400px;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+        text-align: center;
+        color: yellow;
+        -webkit-text-stroke: 1px black;
+        margin-bottom: 20px;
+    }
+
+    b {
+        color: black;
+        font-size: 16px;
+        -webkit-text-stroke: 0.5px black;
+    }
+
+    input, select, textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 6px 0;
+        border: 1px solid black;
+        box-sizing: border-box;
+        border-radius: 4px;
+    }
+
+    .button {
+        background-color: pink;
+        color: white;
+        padding: 12px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        font-size: 16px;
+        border-radius: 5px;
+        text-align: center;
+        display: inline-block;
+        text-decoration: none;
+    }
+
+    .button:hover {
+        background-color: yellow;
+        color: black;
+    }
+</style>
+</head>
+
+<body>
+<div class="bg-img">
+    <h1>P A R A D I S E</h1>
+
+    <!-- Single Form -->
+    <form class="container" action="Payhere.html" method="get">
+        <b><label for="name">Your Name</label></b>
+        <input type="text" id="name" name="visitor_name" placeholder="John Doe" pattern="[A-Za-z\s]{3,20}" required>
+
+        <b><label for="email">Your E-mail</label></b>
+        <input type="email" id="email" name="visitor_email" placeholder="john.doe@email.com" required>
+
+        <b><label for="phone">Your Phone</label></b>
+        <input type="tel" id="phone" name="visitor_phone" placeholder="498-348-3872" pattern="(\d{3})-?(\d{3})-?(\d{4})" required>
+
+        <b><label for="adult">Adults</label></b>
+        <input type="number" id="adult" name="total_adults" placeholder="2" min="1" required>
+
+        <b><label for="child">Children</label></b>
+        <input type="number" id="child" name="total_children" placeholder="0" min="0" required>
+
+        <b><label for="checkin-date">Check-in Date</label></b>
+        <input type="date" id="checkin-date" name="checkin" required>
+
+        <b><label for="checkout-date">Check-out Date</label></b>
+        <input type="date" id="checkout-date" name="checkout" required>
+
+        <b><label for="room-selection">Select Room</label></b>
+        <select id="room-selection" name="room_preference" required>
+            <option value="">Choose a Room</option>
+            <option value="Suites">Suites</option>
+            <option value="Delux">Delux</option>
+            <option value="Honeymoon">Honeymoon</option>
+            <option value="Adjoining">Adjoining</option>
+        </select>
+
+        <b><label for="message">Anything Else?</label></b>
+        <textarea id="message" name="visitor_message" placeholder="Tell us anything else..." required></textarea>
+
+        <button type="submit" class="button">Go to Payment</button>
+    </form>
+</div>
+</body>
+</html>
